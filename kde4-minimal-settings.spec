@@ -1,6 +1,6 @@
 Name: kde4-minimal-settings
 Version: 0.1
-Release: 1
+Release: 2
 
 Group: Graphical desktop/KDE
 Summary: Minimal KDE4 settings
@@ -14,7 +14,7 @@ Requires: gettext qmergeinifiles > 1.50
 Source: %name.tar.gz
 Source1: kubuntu-low-fat-settings.tar
 
-BuildRequires: qmergeinifiles gettext
+BuildRequires: qmergeinifiles gettext kde4-macros
 
 %description
 This package allow to set minimal KDE4 settings to gain additional system resources
@@ -44,14 +44,14 @@ done
 #done
 
 %install
-mkdir -p %buildroot/%{_datadir}/apps/%name/config
-install -m 0644 share/config/* %buildroot/%{_datadir}/apps/%name/config
-mkdir -p %buildroot/%{_datadir}/apps/%name/autostart/
-install -m 0644 share/autostart/* %buildroot/%{_datadir}/apps/%name/autostart
-mkdir -p %buildroot/%{_bindir}/
-install -m 0755 bin/%name %buildroot/%{_bindir}/
-mkdir -p %buildroot/%{_datadir}/applications/kde4
-install -m 0644 share/applications/*.desktop %buildroot/%{_datadir}/applications/kde4
+mkdir -p %buildroot/%_kde_appsdir/%name/config
+install -m 0644 share/config/* %buildroot/%_kde_appsdir/%name/config
+mkdir -p %buildroot/%_kde_appsdir/%name/autostart/
+install -m 0644 share/autostart/* %buildroot/%_kde_appsdir/%name/autostart
+mkdir -p %buildroot/%_kde_bindir/
+install -m 0755 bin/%name %buildroot/%_kde_bindir/
+mkdir -p %buildroot/%_kde_applicationsdir/
+install -m 0644 share/applications/*.desktop %buildroot/%_kde_applicationsdir/
 # translations
 find po/* -type d | \
 while read d
@@ -64,7 +64,7 @@ done
 %find_lang %name
 
 %files -f %name.lang
-%{_bindir}/%name
-%{_datadir}/apps/%name
-%{_datadir}/applications/kde4/*-setup.desktop
+%_kde_bindir/%name
+%_kde_appsdir/%name
+%_kde_applicationsdir/*-setup.desktop
 
