@@ -61,7 +61,7 @@ do
     msgfmt -o %buildroot/%_datadir/locale/$lang/LC_MESSAGES/%name.mo $d/%name.po
 done
 
-%find_lang --with-kde %name
+%find_lang %name
 
 %files -f %name.lang
 %_kde_bindir/%name
