@@ -44,14 +44,14 @@ done
 #done
 
 %install
-mkdir -p %buildroot/%_kde_appsdir/%name/config
-install -m 0644 share/config/* %buildroot/%_kde_appsdir/%name/config
-mkdir -p %buildroot/%_kde_appsdir/%name/autostart/
-install -m 0644 share/autostart/* %buildroot/%_kde_appsdir/%name/autostart
-mkdir -p %buildroot/%_kde_bindir/
-install -m 0755 bin/%name %buildroot/%_kde_bindir/
-mkdir -p %buildroot/%_kde_applicationsdir/
-install -m 0644 share/applications/*.desktop %buildroot/%_kde_applicationsdir/
+mkdir -p %buildroot/%{_datadir}/apps/%name/config
+install -m 0644 share/config/* %buildroot/%{_datadir}/apps/%name/config
+mkdir -p %buildroot/%{_datadir}/apps/%name/autostart/
+install -m 0644 share/autostart/* %buildroot/%{_datadir}/apps/%name/autostart
+mkdir -p %buildroot/%{_bindir}/
+install -m 0755 bin/%name %buildroot/%{_bindir}/
+mkdir -p %buildroot/%{_datadir}/applications/kde4
+install -m 0644 share/applications/*.desktop %buildroot/%{_datadir}/applications/kde4
 # translations
 find po/* -type d | \
 while read d
@@ -64,7 +64,7 @@ done
 %find_lang %name
 
 %files -f %name.lang
-%_kde_bindir/%name
-%_kde_appsdir/%name
-%_kde_applicationsdir/*-setup.desktop
+%{_bindir}/%name
+%{_datadir}/apps/%name
+%{_datadir}/applications/kde4/*-setup.desktop
 
