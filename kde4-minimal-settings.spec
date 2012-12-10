@@ -68,3 +68,20 @@ done
 %_kde_appsdir/%name
 %_kde_applicationsdir/*-setup.desktop
 
+
+
+%changelog
+* Thu Jan 12 2012 Александр Казанцев <kazancas@mandriva.org> 0.1-2
++ Revision: 760475
+- build with propertly kde macros
+
+* Thu Jan 12 2012 Александр Казанцев <kazancas@mandriva.org> 0.1-1
++ Revision: 760299
+- use standart dir path
+- imported package kde4-minimal-settings
+
+
+* Thu Jan 12 2012 Alexander Kazancev <kazancas@mandriva.ru> 4.7-mdv1
+
+* Fri Oct 28 2011 Sergey V Turchin <zerg@altlinux.org> 4.7-alt1
+- initial build
