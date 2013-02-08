@@ -1,6 +1,6 @@
 Name: kde4-minimal-settings
 Version: 0.1
-Release: 2
+Release: 3
 
 Group: Graphical desktop/KDE
 Summary: Minimal KDE4 settings
@@ -17,7 +17,8 @@ Source1: kubuntu-low-fat-settings.tar
 BuildRequires: qmergeinifiles gettext kde4-macros
 
 %description
-This package allow to set minimal KDE4 settings to gain additional system resources
+This package allow to set minimal KDE4 settings to gain additional system
+resources.
 
 
 %prep
