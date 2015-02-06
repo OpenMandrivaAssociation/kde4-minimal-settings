@@ -1,6 +1,6 @@
 Name: kde4-minimal-settings
 Version: 0.1
-Release: 3
+Release: 4
 
 Group: Graphical desktop/KDE
 Summary: Minimal KDE4 settings
